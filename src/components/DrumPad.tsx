@@ -11,7 +11,7 @@ function DrumPad({ idText, letter, setDescription }: Props){
     function playSound(){
         const isPlaying = true; 
         setPlaying(isPlaying);
-        setDescription(idText );
+        setDescription(idText);
         if(isPlaying){
             ref.current.play();
         }else{

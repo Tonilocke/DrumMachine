@@ -11,6 +11,7 @@ const DrumMachine = ()=>{
             audio.play();
         }
     }
+    //without useEffect the keyboard input won't start until after at least a click on one any button
     useEffect(()=>{
        onkeydown= (e)=>{
         handleKeyDown(e);
@@ -19,7 +20,7 @@ const DrumMachine = ()=>{
     
     return(
         <main id="drum-machine" onKeyDown={(e)=>handleKeyDown(e)}>
-            <section id="display">
+            <section id="display" >
                 {audioList.map((el)=> <DrumPad  idText={el.name} letter={el.key} setDescription={setDescription} key={el.key} /> )}
                 { description }
             </section>
