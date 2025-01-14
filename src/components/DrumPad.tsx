@@ -1,8 +1,8 @@
-import { useState, useRef, KeyboardEvent  } from "react";
+import { useState, useRef } from "react";
 type Props = {
     idText:string,
     letter:string,
-    setDescription: Function
+    setDescription: Function,
 }
 
 function DrumPad({ idText, letter, setDescription }: Props){
