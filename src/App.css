@@ -4,36 +4,55 @@
     box-sizing: border-box;
 }
 body{
-    background-color: #e8c47c;
+    background-color: #c171d7;
     font-family: Helvetica,sans-serif;
 }
 
 #display{
+    width: 50%;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1rem;
-    
+    margin-top:2rem;
 }
 #drum-machine{
     width:80%;
     margin:0 auto;
+    & p{
+        font-family: serif;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color:#00080c;
+    }
 }
 
 button{
     border: none;
-    padding: 16px 24px ;
+    padding: 16px 28px ;
     background-color: #39956b;
-    width: 30px;
+    width: 50%;
     font-size: 1.2rem;
     font-weight: bold;
     border-bottom: 2px solid #00180d;
+    border-right: 2px solid #00180d;
     border-radius: 0.5rem;
     cursor: pointer;
-    transition: border 300ms, background-color 300ms ;
+    transition: border 300ms, background-color 300ms;
+    color:#00080c;
 }
 
 button:active{
     border: none;
     background-color: #00180d;
     color:#fff;
+}
+
+@media(max-width:628px){
+    #display{
+        grid-template-columns: 1fr;
+    }
+    button{
+        width:80%;
+    }
 }

@@ -3,12 +3,13 @@ import DrumPad from "./DrumPad";
 import audioList from "../audioList";
 const DrumMachine = ()=>{
     const [description, setDescription] = useState<string>("");
-    console.log(audioList);
     function handleKeyDown(e: KeyboardEvent){
         const keypresd = e.key.toUpperCase();
         const audio = document.getElementById(keypresd);
+        const d = audioList.filter((el)=>el.key == keypresd);
         if(audio){
             audio.play();
+            setDescription(d[0].name);
         }
     }
     //without useEffect the keyboard input won't start until after at least a click on one any button
@@ -22,7 +23,7 @@ const DrumMachine = ()=>{
         <main id="drum-machine" onKeyDown={(e)=>handleKeyDown(e)}>
             <section id="display" >
                 {audioList.map((el)=> <DrumPad  idText={el.name} letter={el.key} setDescription={setDescription} key={el.key} /> )}
-                { description }
+                <p> { description } </p>
             </section>
         </main>
     );
