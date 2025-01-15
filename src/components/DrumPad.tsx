@@ -7,15 +7,15 @@ type Props = {
 
 function DrumPad({ idText, letter, setDescription }: Props){
     const [playing, setPlaying] = useState<boolean>(false);
-    const ref = useRef(null);
+    const ref = useRef<HTMLAudioElement | null>(null);
     function playSound(){
         const isPlaying = true; 
         setPlaying(isPlaying);
         setDescription(idText);
         if(isPlaying){
-            ref.current.play();
+            ref.current!.play();
         }else{
-            ref.current.pause();
+            ref.current!.pause();
         }
     }
     

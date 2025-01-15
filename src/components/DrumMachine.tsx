@@ -3,9 +3,9 @@ import DrumPad from "./DrumPad";
 import audioList from "../audioList";
 const DrumMachine = ()=>{
     const [description, setDescription] = useState<string>("");
-    function handleKeyDown(e: KeyboardEvent){
+    function handleKeyDown(e: any){
         const keypresd = e.key.toUpperCase();
-        const audio = document.getElementById(keypresd);
+        const audio:any = document.getElementById(keypresd);
         const d = audioList.filter((el)=>el.key == keypresd);
         if(audio){
             audio.play();
