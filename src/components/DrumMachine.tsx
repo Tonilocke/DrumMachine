@@ -22,7 +22,7 @@ const DrumMachine = ()=>{
     return(
         <main id="drum-machine" onKeyDown={(e)=>handleKeyDown(e)}>
             <section id="display" >
-                {audioList.map((el)=> <DrumPad  idText={el.name} letter={el.key} setDescription={setDescription} key={el.key} /> )}
+                {audioList.map((el)=> <DrumPad  idText={el.name} letter={el.key} path = {el.path} setDescription={setDescription} key={el.key} /> )}
                 <p> { description } </p>
             </section>
         </main>
